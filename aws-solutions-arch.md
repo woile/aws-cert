@@ -465,6 +465,7 @@
   - spread across 3 geographically distinct data centers
   - eventual consistent reads (default)
   - strong consistent reads (can be chosen)
+  - allows for the storage of large text and binary objects, but there is a limit of 400 KB.
   - **Amazon DynamoDB Accelerator (DAX)**
     - fully managed, highly available, in-memory cache for Amazon DynamoDB that delivers up to a 10 times performance improvement
 - **Redshift**

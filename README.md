@@ -4,7 +4,7 @@ This repo contains the following:
 
 - Notes about related services for the exam
 - A CSV with questions
-- An Anki deck to
+- An Anki deck which is also [published](https://ankiweb.net/shared/info/189094824)
 
 Plus a bunch of questions, in CSV and an Anki deck to study.
 

@@ -99,8 +99,7 @@ Which is the lowest cost HDD volume designed for less frequently accessed worklo
 "A service from AWS is suspected to gone down, where can you check?", "AWS Personal Health Dashboard. It will give insight about your affected services if AWS is experiencing events that may impact you."
 "How are EC2 on demand instances limited? (Service quotas)", "by vCPU amount per region. All Standard type max is: 1152 vCPUs. All other instances: 128 vCPUs."
 "How are EC2 spot on instances limited? (Service quotas)", "by vCPU amount per region."
-"How are EC2 spot on instances limited? (Service quotas)", "by vCPU amount per region."
-"How are EC2 spot on instances limited? (Service quotas)", "for each Region you can purchase 20 regional Reserved Instances per month plus an additional 20 zonal Reserved Instances per month for each Availability Zone. For example, in a Region with three Availability Zones, the limit is 80 Reserved Instances per month (20x3=60 + 20 region = 80)"
+"How are EC2 Reserved instances limited? (Service quotas)", "For each Region you can purchase 20 regional Reserved Instances per month plus an additional 20 zonal Reserved Instances per month for each Availability Zone. For example, in a Region with three Availability Zones, the limit is 80 Reserved Instances per month (20x3=60 + 20 region = 80)"
 "How many Elastic IP addresses for EC2-Classic can you have? (Service quotas)", "5"
 "How many Security Groups for EC2-Classic per Region can you have? (Service quotas)", "500"
 "What are good database options for user session management?", "DynamoDB and Elasticache"
@@ -116,7 +115,7 @@ Which is the lowest cost HDD volume designed for less frequently accessed worklo
 "What will be avaluated first in a NACL a 100 rule or a 200 rule?", "100. From lower to higher"
 "Can a subnet be associated to multiple NACLs and what about the opposite?", "You can associate a network ACL with multiple subnets. However, a subnet can be associated with only one network ACL at a time. When you associate a network ACL with a subnet, the previous association is removed."
 "What's the difference between route table and NACL?", "NACL is like a subnet firewall, while route table points direct traffic in/out of a subnet, it routes the traffic to the correct destination"
-"What's the difference between Security Groups and NACL?", "Security Groups are used for instance level control and do not have outbound rules, denying all inbound traffic unless explicitly allowed. NACLs are used for subnet level control and have both inbound and outbound rules. By default, they are configured to allow all traffic at ingress and egress
+"What's the difference between Security Groups and NACL?", "Security Groups are used for instance level control and do not have outbound rules, denying all inbound traffic unless explicitly allowed. NACLs are used for subnet level control and have both inbound and outbound rules. By default, they are configured to allow all traffic at ingress and egress"
 "What are IAM users?", "(Authentication) End user think about people"
 "What are IAM groups?", "(Authentication) Set of users under one set of permission(policies)"
 "What are IAM roles?", "(Authentication) Grant specific permission to specific actors. Actors can be authenticated by AWS or some trusted external system. Can be associated with AWS resources"

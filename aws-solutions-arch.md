@@ -85,7 +85,7 @@
       - **Interface endpoints**
         - support many AWS services
       - **Gateway endpoints**
-        - s3
+        - S3
         - dynamo db
   - **CIDR block**
     - Classless Inter-Domain Routing. An internet protocol address allocation and route aggregation methodology. [CIDR Notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)
@@ -136,6 +136,7 @@
       - stored redundantly across multiple devices in multiple facilities.
     - **S3 - IA (infrequent access)**
       - lower fee than standard but you are charged a retrieval fee
+      - Objects must be stored at least 30 days in the current storage class before you can transition them to STANDARD_IA
     - **S3 One Zone-Infrequent Access (S3 One Zone-IA; Z-IA)**
       - lower-cost option for infrequently accessed data, but do not require the multiple Availability Zone data resilience model of the S3 Standard
       - are available for millisecond access (same as the S3 Standard storage class).
@@ -155,7 +156,7 @@
   - examples: moving backups to the cloud, using on-premises file shares backed by cloud storage, and providing low latency access to data in AWS for on-premises applications
   - 3 services
     - **File Gateway**
-      - flat files, stored directly on s3
+      - flat files, stored directly on S3
       - offers standard storage protocols SMB or NFS-based access to data in Amazon S3 with local caching
       - extends the AWS cloud to your data center
       - gets your data into amazon S3 for use with other AWS services
@@ -168,11 +169,11 @@
       - replace using physical tapes on premises with virtual tapes in AWS without changing existing backup workflows
     - **Volume Gateway**
       - **Cached volumes**
-        - entire dataset stored on s3
+        - entire dataset stored on S3
         - most frequently access data is cached on site
       - **Stored volumes**
         - entire dataset stored on site
-        - asynchronously backed up to s3
+        - asynchronously backed up to S3
       - cloud-backed iSCSI block storage volumes to your on-premises applications
 - **Storage Gateway Hardware Appliance**
   - physical, standalone, validated server configuration for on-premises deployments
@@ -253,6 +254,7 @@
       - can spanmultiple AZ
   - **Autoscaling**
     - Ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application
+    - Maxium of 20 instances per region
     - Steps
       - Alarm is triggered in CloudWatch
       - Cooldown period ignores any other alarm coming in that window (default 5 minutes)
@@ -413,6 +415,7 @@
     - Once VPN is available, set up the VPN on the customer gateway or firewall
 - **CloudTrail**
   - log, continuously monitor, and retain account activity related to actions across your AWS infrastructure
+  - enables governance, compliance, operational auditing, and risk auditing of your AWS account
 - **CloudFront**
   - CDN
   - **Edge location**
@@ -423,7 +426,7 @@
     - you can clear cached objects, but you will be charged
   - **Origin**
     - origin of the files the CDN will distribute
-    - e.g: s3, ec2, ELB or route53
+    - e.g: S3, ec2, ELB or route53
   - **Distribution**
     - name given to the CDN, made of a collection of Edge Locations
   - Web distribution: website
@@ -441,14 +444,14 @@
   - interactive query service to analyze and query data in S3 using SQL
   - nothing to provision, pay per query / TB scanned
   - uses
-    - query log stored on s3
-    - business reports on data stored on s3
+    - query log stored on S3
+    - business reports on data stored on S3
     - analyse AWS cost
 - **AWS Macie**
   - PII
     - personally identifiable information
     - address, email, driver's license, passport number, etc
-  - Security service which uses ML and NLP to discover, classify and protect sensitive data stored in s3
+  - Security service which uses ML and NLP to discover, classify and protect sensitive data stored in S3
   - managed data security and data privacy service using machine learning and pattern matching techniques
   - provides an inventory of Amazon S3 buckets including a list of unencrypted buckets, publicly accessible buckets, and buckets shared with AWS accounts outside those you have defined in AWS Organizations
   - identify and alert you to sensitive data, such as personally identifiable information (PII)
@@ -511,7 +514,7 @@
   - single point of contact for clients
   - distributes incoming application traffic across multiple targets, such as EC2 in multiple AZ
   - health checks are used to monitor the health of the registered targets so that the load balancer can send requests only to the healthy targets.
-  - 504 Error means gateway has timed out. There's a problem in the instance or db not responding
+  - 504 Error means gateway has timed out. There's a problem in the instance or DB not responding
   - **Application Load Balancer**
     - functions at the application layer, the seventh layer of the OSI model
     - allows traffic distribution toward backend instances based on the information inside the HTTP requests header
@@ -634,7 +637,23 @@
 
 ## TODO
 
-- learn about cardinality in dynamoDB.
-- active directory
 
 [monitoring_metrics]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html
+
+
+## Exercise
+Objective: be able to ping (ICMP) and connect (SSH) from a public EC2 instance to a private EC2 instance
+Rules:
+- 1 VPC
+- a public and private subnets
+- public subnet should auto-assign public ips
+- 1 NACL for ICMP and SSH used by both subnets
+- 2 Security Groups (private should allow access from the public)
+- 1 route table
+
+
+## Resources
+
+- A cloud guru
+- udemy course
+- Cloudformation tutorial: https://www.youtube.com/watch?v=_jqwVpO1w6A

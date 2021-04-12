@@ -642,7 +642,9 @@
 
 
 ## Exercise
+
 Objective: be able to ping (ICMP) and connect (SSH) from a public EC2 instance to a private EC2 instance
+
 Rules:
 - 1 VPC
 - a public and private subnets
@@ -650,10 +652,3 @@ Rules:
 - 1 NACL for ICMP and SSH used by both subnets
 - 2 Security Groups (private should allow access from the public)
 - 1 route table
-
-
-## Resources
-
-- A cloud guru
-- udemy course
-- Cloudformation tutorial: https://www.youtube.com/watch?v=_jqwVpO1w6A
